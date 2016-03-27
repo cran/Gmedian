@@ -1,0 +1,16 @@
+Package: Gmedian
+Type: Package
+Title: Geometric Median, k-Median Clustering and Robust Median PCA
+Version: 1.0
+Date: 2016-03-20
+Author: Herve Cardot
+Maintainer: Herve Cardot <herve.cardot@u-bourgogne.fr>
+Description: Fast algorithms based on averaged stochastic gradient for robust estimation with large samples (with data whose dimension is larger than 2). Estimation of the geometric median, robust k-Gmedian clustering, and robust PCA based on the Gmedian covariation matrix.
+License: GPL (>= 2)
+Depends: R (>= 3.0.2), rARPACK
+Imports: Rcpp (>= 0.12.3)
+LinkingTo: Rcpp, RcppArmadillo
+NeedsCompilation: yes
+Packaged: 2016-03-27 16:42:23 UTC; cami
+Repository: CRAN
+Date/Publication: 2016-03-27 19:42:51

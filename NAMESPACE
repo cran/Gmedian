@@ -1,0 +1,8 @@
+useDynLib(Gmedian)
+exportPattern("^[[:alpha:]]+")
+
+importFrom(rARPACK, eigs_sym)
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "kmeans")
+
+export(Gmedian,kGmedian,GmedianCov)  
