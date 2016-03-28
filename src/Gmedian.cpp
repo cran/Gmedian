@@ -21,7 +21,7 @@ for (int nbcomp = 0 ; nbcomp < nstart ; nbcomp++){
     {
       normxm = arma::norm(X.row(it)-medrm);
       if (normxm > epsilon) {
-        poids = sqrt(p)*gamma*pow(it+1,-alpha)/normxm;
+        poids = sqrt(double(p))*gamma*pow(double(it+1),-alpha)/normxm;
         medrm += poids * (X.row(it)-medrm) ;
       }
     medvec += (medrm-medvec)/(it+1);
@@ -61,7 +61,7 @@ Rcpp::NumericMatrix MedianCovMatRow_rcpp(const arma::mat  X, const arma::rowvec 
             diffmat -= medrm ;
             nrmrm = arma::norm(diffmat,"fro") ; // Frobenius norm divided by the dimension
  //           nrmrm = arma::sqrt(arma::sum(arma::square(diffmat)))/p ;
-            poids = p  * gamma * pow(it+1,-alpha) * pow(nrmrm,-1);
+            poids = p  * gamma * pow(double(it+1),-alpha) * pow(nrmrm,-1);
             medrm +=   poids*diffmat ;
             medav += (medrm-medav)/(it+1);
         }
@@ -98,7 +98,7 @@ Rcpp::NumericMatrix MedianCovMatRow_rcpp(const arma::mat  X, const arma::rowvec 
     for(i = 0; i < n; i++) { /* boucle sur les individus */
         best = R_PosInf;
         for(j = 0; j < k; j++) {  /*calcul du centre le plus proche*/
-            dd = arma::norm(X.row(i)-centersrm.row(j))/sqrt(p);
+            dd = arma::norm(X.row(i)-centersrm.row(j))/sqrt(double(p));
           if(dd < best) {
 		best = dd;
 		inew = j+1;
@@ -109,7 +109,7 @@ Rcpp::NumericMatrix MedianCovMatRow_rcpp(const arma::mat  X, const arma::rowvec 
     /* mise a jour de RM*/
     /*for(c = 0; c < p; c++)*/
         if (best>0){
-        poids = gamma/(pow(nc[it],alph)*sqrt(best));
+        poids = gamma/(pow(double(nc[it]),alph)*sqrt(best));
         centersrm.row(it) +=   (X.row(i) - centersrm.row(it))*poids;
         }
         nc(it)++; /* incrementation de la taille de la classe */
@@ -128,14 +128,9 @@ Rcpp::NumericMatrix MedianCovMatRow_rcpp(const arma::mat  X, const arma::rowvec 
     /* boucle sur tous les n+k individus de la table xtot*/
     for(i = 0; i < ntot; i++) {
 	best = R_PosInf;
-	for(j = 0; j < k; j++) { /**/ /*calcul du centre j le plus proche*/
-        dd = arma::norm(Xtot.row(i)-centersav.row(j))/sqrt(p);
-        
-	    /*for(c = 0; c < p; c++) {
-		tmp = xtot[i+ntot*c] - centav[j+k*c];
-		dd += tmp * tmp;
-	    }
-         */
+	for(j = 0; j < k; j++) { /*calcul du centre j le plus proche*/
+        dd = arma::norm(Xtot.row(i)-centersav.row(j))/sqrt(double(p));
+
         if(dd < best) {
 		best = dd;
 		inew = j+1;

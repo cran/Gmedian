@@ -2,7 +2,7 @@
 \alias{GmedianCov}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{GmedianCov}
-\description{Computes recursively the Geometric median and the (geometric) median covariation matrix  with fast averaged stochastic gradient algorithms. The estimation of the Geometric median is performed first and then the median covariation matrix is estimated.}
+\description{Computes recursively the Geometric median and the (geometric) median covariation matrix  with fast averaged stochastic gradient algorithms. The estimation of the Geometric median is performed first and then the median covariation matrix is estimated, as well as its leading eigenvectors. Note that by construction the estimator of the median covariation matrix is always a non negative matrix.}
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 \usage{
 GmedianCov(X, init=NULL, scores=2, gamma=2, gc=2, alpha=0.75, nstart=1)
@@ -18,7 +18,7 @@ GmedianCov(X, init=NULL, scores=2, gamma=2, gc=2, alpha=0.75, nstart=1)
 \item{nstart}{Number of time the algorithms are ran.}
 }
 \details{
-The (fast) computation of the eigenvectors is performed by  \code{\link[rARPACK]{eigs_sym}} of package \code{rARPACK}.
+The (fast) computation of the eigenvectors is performed by  \code{\link[RSpectra]{eigs_sym}} of package \code{RSpectra}.
 See the technical report Cardot, H. and Godichon-Baggioni (2015) for more details on the recursive algorithm. See also \code{\link{Gmedian}}.
 %%  ~~ If necessary, more details than the description above ~~
 }
@@ -48,8 +48,8 @@ See also  \code{\link{Gmedian}}.
 \examples{
 ## Simulated data - Brownian paths
 n <- 1e3
-p <- 50
-x <- matrix(rnorm(n*p,sd=1/sqrt(p)), n, p)
+d <- 50
+x <- matrix(rnorm(n*d,sd=1/sqrt(d)), n, d)
 x <- t(apply(x,1,cumsum))
 
 ## Estimation
@@ -57,9 +57,9 @@ median.est <- GmedianCov(x)
 
 par(mfrow=c(1,2))
 image(median.est$covmedian) ## median covariation function
-plot(c(1:p)/p,median.est$vectors[,1]*sqrt(p),type="l",xlab="Time",
+plot(c(1:d)/d,median.est$vectors[,1]*sqrt(d),type="l",xlab="Time",
 ylab="Eigenvectors",ylim=c(-1.4,1.4))
-lines(c(1:p)/p,median.est$vectors[,2]*sqrt(p),lty=2)
+lines(c(1:d)/d,median.est$vectors[,2]*sqrt(d),lty=2)
 }
 \keyword{Gmedian}
 

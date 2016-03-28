@@ -6,7 +6,7 @@
 \packageTitle{Gmedian}
 }
 \description{
-The geometric median (also called spatial median or L1 median) is a robust multivariate indicator of central position. This librairy provides fast estimation procedures based on averaged stochastic gradient algorithms that can handle rapidly large samples of high dimension data. Function \code{\link{Gmedian}} computes the geometric median of a numerical data set, whereas \code{\link{GmedianCov}} computes the median covariation matrix, a useful indicator for robust PCA. Robust clustering, based on the geometric media, can also be performed with \code{\link{kGmedian}}.
+The geometric median (also called spatial median or L1 median) is a robust multivariate indicator of central position. This library provides fast estimation procedures based on averaged stochastic gradient algorithms that can handle rapidly large samples of high dimensional data. Function \code{\link{Gmedian}} computes the geometric median of a numerical data set, whereas \code{\link{GmedianCov}} computes the median covariation matrix, a useful indicator for robust PCA. Robust clustering, based on the geometric k-medians, can also be performed with \code{\link{kGmedian}}.
 %\packageDescription{Gmedian}
 }
 \details{

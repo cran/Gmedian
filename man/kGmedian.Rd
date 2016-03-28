@@ -2,7 +2,7 @@
 \alias{kGmedian}
 \title{kGmedian}
 \description{Fast k-medians clustering based on recursive averaged stochastic gradient algorithms.
-The procedure is similar to the \code{\link[stats]{kmeans}} clustering technique performed recursively with the \code{MacQueen} algorithm. The advantage of the kGmedian algorithm compared to MacQueen strategy is that it deals with sum of norms instead of sum of squared norms, ensuring a more robust behaviour againts outlying values. 
+The procedure is similar to the \code{\link[stats]{kmeans}} clustering technique performed recursively with the \code{MacQueen} algorithm. The advantage of the kGmedian algorithm compared to MacQueen strategy is that it deals with sum of norms instead of sum of squared norms, ensuring a more robust behaviour against outlying values. 
 }
 \usage{
 kGmedian(X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans = 10)

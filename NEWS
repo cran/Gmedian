@@ -1,0 +1,6 @@
+Changes to Version 1.1
+
+   - Fixed bug in C++ related to the (forbidden) use of function 'sqrt' for integers
+
+   - Use function 'eig_sym' from package Rspectra instead of package rARPACK
+
