@@ -13,3 +13,11 @@ stoKmed_rcpp <- function(X, Xtot, centers, gamma = 2, alpha = 0.75) {
     .Call('Gmedian_stoKmed_rcpp', PACKAGE = 'Gmedian', X, Xtot, centers, gamma, alpha)
 }
 
+Weiszfeld_rcpp <- function(X, weights, epsilon = 1e-08, nitermax = 100L) {
+    .Call('Gmedian_Weiszfeld_rcpp', PACKAGE = 'Gmedian', X, weights, epsilon, nitermax)
+}
+
+MedianCovMatW_rcpp <- function(X, median_est, weights, epsilon = 1e-08, nitermax = 100L) {
+    .Call('Gmedian_MedianCovMatW_rcpp', PACKAGE = 'Gmedian', X, median_est, weights, epsilon, nitermax)
+}
+

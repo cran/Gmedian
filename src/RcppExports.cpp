@@ -51,3 +51,32 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// Weiszfeld_rcpp
+Rcpp::List Weiszfeld_rcpp(const arma::mat X, const arma::rowvec weights, const double epsilon, int nitermax);
+RcppExport SEXP Gmedian_Weiszfeld_rcpp(SEXP XSEXP, SEXP weightsSEXP, SEXP epsilonSEXP, SEXP nitermaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const arma::rowvec >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< const double >::type epsilon(epsilonSEXP);
+    Rcpp::traits::input_parameter< int >::type nitermax(nitermaxSEXP);
+    __result = Rcpp::wrap(Weiszfeld_rcpp(X, weights, epsilon, nitermax));
+    return __result;
+END_RCPP
+}
+// MedianCovMatW_rcpp
+Rcpp::List MedianCovMatW_rcpp(const arma::mat X, const arma::rowvec median_est, const arma::rowvec weights, const double epsilon, int nitermax);
+RcppExport SEXP Gmedian_MedianCovMatW_rcpp(SEXP XSEXP, SEXP median_estSEXP, SEXP weightsSEXP, SEXP epsilonSEXP, SEXP nitermaxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const arma::rowvec >::type median_est(median_estSEXP);
+    Rcpp::traits::input_parameter< const arma::rowvec >::type weights(weightsSEXP);
+    Rcpp::traits::input_parameter< const double >::type epsilon(epsilonSEXP);
+    Rcpp::traits::input_parameter< int >::type nitermax(nitermaxSEXP);
+    __result = Rcpp::wrap(MedianCovMatW_rcpp(X, median_est, weights, epsilon, nitermax));
+    return __result;
+END_RCPP
+}

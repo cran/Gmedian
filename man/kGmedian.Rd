@@ -9,7 +9,7 @@ kGmedian(X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans = 10)
 }
 \arguments{
 \item{X}{matrix, with n observations (rows) in dimension d (columns).}
-\item{ncenters}{either the number of clusters, say k, or a set of initial (distinct) cluster centres. If a number, the initial centres are chosen as the output of the \code{\link[stats]{kmeans}} function computed with the \code{MacQueen} algorithm.}
+\item{ncenters}{Either the number of clusters, say k, or a set of initial (distinct) cluster centres. If a number, the initial centres are chosen as the output of the \code{\link[stats]{kmeans}} function computed with the \code{MacQueen} algorithm.}
 \item{gamma}{Value of the constant controling the descent steps (see details).}
 \item{alpha}{Rate of decrease of the descent steps.}
 \item{nstart}{Number of times the algorithm is ran, with  random sets of initialization centers chosen among the observations.}

@@ -9,9 +9,9 @@ GmedianCov(X, init=NULL, scores=2, gamma=2, gc=2, alpha=0.75, nstart=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-\item{X}{data matrix, with n observations (rows) in dimension d (columns).}
+\item{X}{Data matrix, with n observations (rows) in dimension d (columns).}
 \item{init}{When \code{NULL} the starting point of the algorithm estimating the median is the first observation.}  
-\item{scores}{an integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=NULL}.}
+\item{scores}{An integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=NULL}.}
 \item{gamma}{Value (positive) of the constant controling the descent steps (see details) for the algorithm computing median.}
 \item{gc}{Value (positive) of the constant controling the descent steps (see details) for algorithm computing the median covariation matrix}
 \item{alpha}{Rate of decrease of the descent steps, \eqn{ 1/2 < alpha <=1}.}
@@ -34,16 +34,9 @@ Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of th
 Cardot, H. and Godichon-Baggioni, A. (2015). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis.  \url{http://arxiv.org/abs/1504.02852}
 %% ~put references to the literature/web site here ~
 }
-%\author{
-%%  ~~who you are~~
-%}
-%\note{
-%%  ~~further notes~~
-%}
-
 
 \seealso{
-See also  \code{\link{Gmedian}}.
+See also  \code{\link{Gmedian}} and \code{\link{WeiszfeldCov}}.
 }
 \examples{
 ## Simulated data - Brownian paths

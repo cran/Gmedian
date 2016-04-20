@@ -9,12 +9,12 @@ Gmedian(X, init = NULL, gamma = 2, alpha = 0.75, nstart=2, epsilon=1e-08)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-\item{X}{data matrix, with n (rows) observations in dimension d (columns).}
+\item{X}{Data matrix, with n (rows) observations in dimension d (columns).}
 \item{init}{When \code{NULL} the starting point of the algorithm is the first observation. Else the starting point of the algorithm is provided by \code{init}.}  
 \item{gamma}{Value (positive) of the constant controling the descent steps (see details).}
 \item{alpha}{Rate of decrease of the descent steps (see details). Should satisfy \eqn{1/2< alpha <= 1}.}
 \item{nstart}{Number of times the algorithm is ran over all the data set.}
-\item{epsilon}{numerical tolerance.}
+\item{epsilon}{Numerical tolerance. By defaut set to 1e-08.}
 }
 \details{
 The recursive averaged algorithm is described in Cardot, Cenac, Zitt (2013), with descent steps defined as \eqn{\alpha_n = gamma/n^{alpha}}.
@@ -26,7 +26,7 @@ Vector of the geometric median.
 Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. \emph{Bernoulli}, 19, 18-43.
 }
 \seealso{
-See also \code{\link{GmedianCov}} and \code{\link{kGmedian}}.
+See also \code{\link{GmedianCov}}, \code{\link{kGmedian}} and \code{\link{Weiszfeld}}.
 }
 \examples{
 ## Simulated data - Brownian paths

@@ -1,3 +1,11 @@
+Changes to Version 1.2
+
+   - Add function 'Weiszfeld' based on  Weiszfeld's algorithm for computing the geometric median. Slower than 'Gmedian' but more accurate for small and moderate sample sizes.
+
+   - Add function 'WeiszfeldCov' based on  Weiszfeld's algorithm for computing the median covariation matrix. Slower than 'GmedianCov' but more accurate for small and moderate sample sizes. Not appropriate for high dimension (d>500) data.
+
+
+
 Changes to Version 1.1
 
    - Fixed bug in C++ related to the (forbidden) use of function 'sqrt' for integers
