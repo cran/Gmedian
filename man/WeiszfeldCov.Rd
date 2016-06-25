@@ -16,16 +16,17 @@ WeiszfeldCov(X, weights=NULL, scores=2, epsilon=1e-08, nitermax = 100)
 \item{nitermax}{Maxium number of iterations of the algorithm. By default set to 100.}
 }
 \details{
-This fast and accurate iterative algorithm can deal with moderate size datasets (see . For large datasets use preferably \code{\link{GmedianCov}}, if fast estimations are required.
-Weights can be given for statistical units, allowing to deal with data drawn from  unequal probability sampling designs (see Lardin-Puech, Cardot and Goga, 2014). 
+This fast and accurate iterative algorithm can deal with moderate size datasets. For large datasets use preferably \code{\link{GmedianCov}}, if fast estimations are required.
+Weights can be given for statistical units, allowing to deal with data drawn from  unequal probability sampling designs (see Lardin-Puech, Cardot and Goga, 2014). The principal components standard deviation is estimed robustly thanks to function \code{\link[robustbase]{scaleTau2}} from package \code{robustbase}.
 }
 \value{ 
 \item{median}{Vector of the geometric median}
 \item{covmedian}{Median covariation matrix}
 \item{vectors}{The \code{scores=q} eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues}
-\item{scores}{Principal component scores corresponding to the \code{scores=q} eigenvectors.}
+\item{scores}{Principal component scores corresponding to the \code{scores=q} eigenvectors}
+\item{sdev}{The \code{scores=q} robust estimates of the standard deviation of the principal components scores}
 \item{iterm}{Number of iterations needed to estimate the median}
-\item{itercov}{Number of iterations needed to estimate the median covariation matrix}
+\item{itercov}{Number of iterations needed to estimate the median covariation matrix.}
 }
 
 \references{

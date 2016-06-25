@@ -28,13 +28,13 @@ while (iter < nitermax and normxm > epsilon )
 {
   for (int it=0 ; it < n ; it++)
   {
-    diffxn = norm(X.row(it)-meanvec);
-    if (diffxn > 0) {poids(it) = weights(it)/diffxn;}
-    else {poids(it)=0;}
+    diffxn = arma::norm(X.row(it)-meanvec);
+    if (diffxn > 0) poids(it) = weights(it)/diffxn;
+    else poids(it)=0;
   }  
-  poids = poids/sum(poids); /* normalisation */
+  poids = poids/arma::sum(poids); /* normalisation */
   medvec = poids*X; /* mise a jour de la mediane */
-  normxm = norm(medvec-meanvec)/sqrt(double(p));
+  normxm = arma::norm(medvec-meanvec)/sqrt(double(p));
   meanvec = medvec;
   iter++;
 }
@@ -48,6 +48,7 @@ while (iter < nitermax and normxm > epsilon )
 // [[Rcpp::export]]
 Rcpp::List MedianCovMatW_rcpp(const arma::mat  X, const arma::rowvec median_est, const arma::rowvec weights, const double epsilon = 1e-08, int nitermax = 100)
 {
+// Estimation of the Median Covariation Matrix with Weiszfeld's algorithm  
     // X : n * p  matrix
     // Inputs
     const int n = X.n_rows ;
@@ -60,7 +61,6 @@ Rcpp::List MedianCovMatW_rcpp(const arma::mat  X, const arma::rowvec median_est,
   }
 arma::mat medinit = arma::trans(Xcent) * Xcent/n; 
 arma::mat  medest(p,p);
-medest.fill(0.0);
 arma::rowvec poids(n);
 double diffxn, normxm = 1;
 int iter = 0;
@@ -68,15 +68,16 @@ int iter = 0;
     
  while (iter < nitermax and normxm > epsilon )
 {
+medest.fill(0.0);
   for (int it=0 ; it < n ; it++)
   {
     diffxn = arma::norm(arma::trans(Xcent.row(it))*Xcent.row(it)-medinit,"fro");
-    if (diffxn > 0) {poids(it) = weights(it)/diffxn;}
-    else {poids(it)=0;}
+    if (diffxn > 0) poids(it) = weights(it)/diffxn;
+    else poids(it) = 0;
     medest +=poids(it)*arma::trans(Xcent.row(it))*Xcent.row(it);
     }  
-  medest = medest/sum(poids); /* normalisation */
-  normxm = norm(medest-medinit,"fro")/p;
+  medest = medest/arma::sum(poids); /* normalisation */
+  normxm = arma::norm(medest-medinit,"fro")/p;
   medinit = medest;
   iter++;
 }
@@ -86,6 +87,4 @@ int iter = 0;
     ret["iter"] = iter ;
     return Rcpp::wrap(ret);
 }  
-
-    
 

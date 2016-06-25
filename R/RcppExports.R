@@ -9,6 +9,10 @@ MedianCovMatRow_rcpp <- function(X, Gmedian, gamma = 2, alpha = 0.75, nstart = 1
     .Call('Gmedian_MedianCovMatRow_rcpp', PACKAGE = 'Gmedian', X, Gmedian, gamma, alpha, nstart)
 }
 
+MedianCovMatRowP_rcpp <- function(X, Gmedian, gamma = 2, alpha = 0.75, nstart = 1L) {
+    .Call('Gmedian_MedianCovMatRowP_rcpp', PACKAGE = 'Gmedian', X, Gmedian, gamma, alpha, nstart)
+}
+
 stoKmed_rcpp <- function(X, Xtot, centers, gamma = 2, alpha = 0.75) {
     .Call('Gmedian_stoKmed_rcpp', PACKAGE = 'Gmedian', X, Xtot, centers, gamma, alpha)
 }

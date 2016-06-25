@@ -69,9 +69,46 @@ Rcpp::NumericMatrix MedianCovMatRow_rcpp(const arma::mat  X, const arma::rowvec 
     return Rcpp::wrap(medav);
 }
 
+// [[Rcpp::export]]
+Rcpp::NumericMatrix MedianCovMatRowP_rcpp(const arma::mat  X, const arma::rowvec  Gmedian, const double gamma = 2, const double alpha = 0.75, const int nstart = 1){
+    // X : n * p  matrix
+    // Inputs
+    const int n = X.n_rows ;
+    const int p = X.n_cols ;
+    // Containers
+    arma::rowvec diffmed = X.row(0)-Gmedian ;
+    arma::mat medav = arma::trans(diffmed) * diffmed ; 
+    arma::mat  diffmat(p,p), medrm(p,p) ;
+    double nrmrm , poids ; 
+
+    
+// Initialization of the algorithm
+//    diffmed = X.row(0)-Gmedian ;
+//    medav =   arma::trans(diffmed) * diffmed ;
+    medrm = medav ;
+ 
+    
+    // Number of replications of the algorithm
+    for (int nbcomp = 0 ; nbcomp < nstart ; nbcomp++){
+        // Stochastic gradient algorithms
+        for (int it = 1 ; it < n ; it++)
+        {
+            diffmed = X.row(it)-Gmedian ;
+            diffmat = arma::trans(diffmed)*diffmed;
+            diffmat -= medrm ;
+            nrmrm = arma::norm(diffmat,"fro") ; // Frobenius norm divided by the dimension
+ //           nrmrm = arma::sqrt(arma::sum(arma::square(diffmat)))/p ;
+            poids = std::min(1.0, p  * gamma * pow(double(it+1),-alpha) * pow(nrmrm,-1));
+            medrm +=   poids*diffmat ;
+            medav += (medrm-medav)/(it+1);
+        }
+    }
+    return Rcpp::wrap(medav);
+}
 
 
-// [[Rcpp::export()]]  
+
+// [[Rcpp::export]]
     Rcpp::List stoKmed_rcpp(const arma::mat X, const arma::mat Xtot, const arma::mat centers, const double gamma=2, const double alpha = 0.75)
 {
     // Inputs

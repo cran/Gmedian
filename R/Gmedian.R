@@ -11,6 +11,6 @@ Weiszfeld <- function (X, weights = NULL, epsilon=1e-08, nitermax = 100)
 {
   X <- as.matrix(X)
   if (is.null(weights)) poids <- rep(1,nrow(X)) 
-  
+  else poids <- weights
   return(Weiszfeld_rcpp(X, poids, epsilon=epsilon, nitermax=nitermax))
 }

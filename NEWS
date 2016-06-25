@@ -1,3 +1,10 @@
+Changes to version 1.2.1
+
+   - Add robust estimation of the explained variance (standard deviation) for each principal axis in functions ‘WeiszfeldCov’ and ‘GmedianCov’. The robust estimation is obtained thanks to function robustbase::scaleTau2 	
+   
+   - Add the possibility to get a non negative estimated covariation matrix in function ‘GmedianCov’ by considering an approximation to the projection on the convex closed cone of the non negative matrices at each iteration of the Robbins-Monro algorithm. 
+
+
 Changes to Version 1.2
 
    - Add function 'Weiszfeld' based on  Weiszfeld's algorithm for computing the geometric median. Slower than 'Gmedian' but more accurate for small and moderate sample sizes.

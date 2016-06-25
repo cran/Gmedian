@@ -36,6 +36,21 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// MedianCovMatRowP_rcpp
+Rcpp::NumericMatrix MedianCovMatRowP_rcpp(const arma::mat X, const arma::rowvec Gmedian, const double gamma, const double alpha, const int nstart);
+RcppExport SEXP Gmedian_MedianCovMatRowP_rcpp(SEXP XSEXP, SEXP GmedianSEXP, SEXP gammaSEXP, SEXP alphaSEXP, SEXP nstartSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const arma::rowvec >::type Gmedian(GmedianSEXP);
+    Rcpp::traits::input_parameter< const double >::type gamma(gammaSEXP);
+    Rcpp::traits::input_parameter< const double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< const int >::type nstart(nstartSEXP);
+    __result = Rcpp::wrap(MedianCovMatRowP_rcpp(X, Gmedian, gamma, alpha, nstart));
+    return __result;
+END_RCPP
+}
 // stoKmed_rcpp
 Rcpp::List stoKmed_rcpp(const arma::mat X, const arma::mat Xtot, const arma::mat centers, const double gamma, const double alpha);
 RcppExport SEXP Gmedian_stoKmed_rcpp(SEXP XSEXP, SEXP XtotSEXP, SEXP centersSEXP, SEXP gammaSEXP, SEXP alphaSEXP) {
