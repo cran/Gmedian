@@ -1,3 +1,8 @@
+Changes to version 1.2.2
+
+   - Modify 'Makevars' and 'Makevars.win' files for compatibility with Rcpp (>= 0.12.6). 
+
+
 Changes to version 1.2.1
 
    - Add robust estimation of the explained variance (standard deviation) for each principal axis in functions ‘WeiszfeldCov’ and ‘GmedianCov’. The robust estimation is obtained thanks to function robustbase::scaleTau2 	

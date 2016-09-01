@@ -1,16 +1,16 @@
 Package: Gmedian
 Type: Package
 Title: Geometric Median, k-Median Clustering and Robust Median PCA
-Version: 1.2.1
-Date: 2016-06-25
+Version: 1.2.2
+Date: 2016-09-01
 Author: Herve Cardot
 Maintainer: Herve Cardot <herve.cardot@u-bourgogne.fr>
 Description: Fast algorithms  for robust estimation with large samples of multivariate observations. Estimation of the geometric median, robust k-Gmedian clustering, and robust PCA based on the Gmedian covariation matrix.
 License: GPL (>= 2)
-Depends: R (>= 3.0.2)
-Imports: Rcpp (>= 0.12.3), RSpectra, robustbase
+Depends: R (>= 3.3.1)
+Imports: Rcpp (>= 0.12.6), RSpectra, robustbase
 LinkingTo: Rcpp, RcppArmadillo, RSpectra
 NeedsCompilation: yes
-Packaged: 2016-06-25 17:23:20 UTC; cardot
+Packaged: 2016-09-01 07:49:07 UTC; cardot
 Repository: CRAN
-Date/Publication: 2016-06-25 19:46:05
+Date/Publication: 2016-09-01 19:32:01
