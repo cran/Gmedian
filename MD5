@@ -1,11 +1,11 @@
-2bf569313a356fe406f16aa5ceffc885 *DESCRIPTION
+72196e771970b745b0da0142ea6a948d *DESCRIPTION
 ab9318e977a884b224dc29f6aa9dfab2 *NAMESPACE
 5d07be4149b31209a0a351aa6f504f6c *NEWS
 98cdba293802756963a81ab9ffe28545 *R/Gmedian.R
 e9f85ceda185442678306b11d6ecd698 *R/GmedianCov.R
 97d26983738248fb540228cc1e41b418 *R/RcppExports.R
 b98f635de3283003aac407401225c7d0 *R/kGmedian.R
-612a96085f2bc70532f95480f7ae47a1 *build/partial.rdb
+a0b2bfd25a4c4a69fd8d094151e83205 *build/partial.rdb
 2bd80217f2d53cfc77b4cb8430abb3fa *man/Gmedian-package.Rd
 f9daec3261ddc9e551cf911f6d2fcf52 *man/Gmedian.Rd
 a50dc8b1b7029497b0ef161114a2723c *man/GmedianCov.Rd
@@ -14,6 +14,6 @@ a50dc8b1b7029497b0ef161114a2723c *man/GmedianCov.Rd
 7678e70d1a2fc0e29b36e8775db076e0 *man/kGmedian.Rd
 91a3cfdffd2a9eeeb17e8cb84dda1ce5 *src/Gmedian.cpp
 26bcc47bb1df4a669f99301c6a33a7fa *src/Makevars
-8ddae0eaa3060f5213a08ce2d751a5f4 *src/Makevars.win
+3ef757384e0c95c1492b069cf4548b01 *src/Makevars.win
 010837b6b5ea9aaaf0eca8a992b4dd3c *src/RcppExports.cpp
 9d7d2144a0d29d2dade84b16fb826699 *src/Weiszfeld.cpp
