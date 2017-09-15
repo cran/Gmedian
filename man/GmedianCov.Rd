@@ -12,7 +12,7 @@ GmedianCov(X, init=NULL, nn=TRUE, scores=2, gamma=2, gc=2, alpha=0.75, nstart=1)
 \item{X}{Data matrix, with n observations (rows) in dimension d (columns).}
 \item{init}{When \code{NULL} the starting point of the algorithm estimating the median is the first observation.} 
 \item{nn}{When \code{TRUE} the algorithm provides a non negative estimates of the median covariation matrix. When \code{nn=FALSE}, the original algorithm is performed, with no guaranty that all the eigenvalues of the estimates are non negative}
-\item{scores}{An integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=NULL}.}
+\item{scores}{An integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=0}.}
 \item{gamma}{Value (positive) of the constant controling the descent steps (see details) for the algorithm computing median.}
 \item{gc}{Value (positive) of the constant controling the descent steps (see details) for algorithm computing the median covariation matrix}
 \item{alpha}{Rate of decrease of the descent steps, \eqn{ 1/2 < alpha <=1}.}
@@ -20,7 +20,7 @@ GmedianCov(X, init=NULL, nn=TRUE, scores=2, gamma=2, gc=2, alpha=0.75, nstart=1)
 }
 \details{
 The (fast) computation of the eigenvectors is performed by  \code{\link[RSpectra]{eigs_sym}} of package \code{RSpectra}.
-See the technical report Cardot, H. and Godichon-Baggioni (2015) for more details on the recursive algorithm. See also \code{\link{Gmedian}}.
+See Cardot, H. and Godichon-Baggioni (2017) for more details on the recursive algorithm. See also \code{\link{Gmedian}}.
 When \code{nn=TRUE}, the descent step is bounded above so that the solution remains non negative at each iteration.
 The principal components standard deviation is estimed robustly thanks to function \code{\link[robustbase]{scaleTau2}} from package \code{robustbase}.
 %%  ~~ If necessary, more details than the description above ~~
@@ -35,7 +35,7 @@ The principal components standard deviation is estimed robustly thanks to functi
 \references{
 Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. \emph{Bernoulli}, 19, 18-43.
 
-Cardot, H. and Godichon-Baggioni, A. (2015). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis.  \url{http://arxiv.org/abs/1504.02852}
+Cardot, H. and Godichon-Baggioni, A. (2017). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis. TEST, 26, 461-480.
 %% ~put references to the literature/web site here ~
 }
 

@@ -7,7 +7,7 @@ GmedianCov <- function(X, init=NULL, nn=TRUE, scores=2, gamma=2, gc=2, alpha=0.7
   Gmed.est <- Gmedian(X,init=init,gamma=gamma,alpha=alpha,nstart=nstart)
   if (nn==FALSE) GMCM.est <- MedianCovMatRow_rcpp(X,Gmedian=Gmed.est,gamma=gc,alpha=alpha,nstart=nstart)
   else GMCM.est <- MedianCovMatRowP_rcpp(X,Gmedian=Gmed.est,gamma=gc,alpha=alpha,nstart=nstart)
-  if (scores==FALSE){ 
+  if (scores==0){ 
     return(list(median = Gmed.est,covmedian=GMCM.est))
   }
   else {
@@ -29,7 +29,7 @@ WeiszfeldCov <- function(X, weights=NULL, scores=2, epsilon=1e-08, nitermax = 10
   else poids <- weights 
   Wmed.est <- Weiszfeld_rcpp(X,poids,epsilon=epsilon,nitermax=nitermax)
   WMCM.est <- MedianCovMatW_rcpp(X,Wmed.est$median,poids,epsilon=epsilon,nitermax=nitermax)
-  if (scores==FALSE){ 
+  if (scores==0){ 
     return(list(median = Wmed.est$median, covmedian=WMCM.est$median, iterm = Wmed.est$iter, itercov = WMCM.est$iter))
   }
   else {

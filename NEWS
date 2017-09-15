@@ -1,3 +1,7 @@
+Changes to version 1.2.3
+
+   - Update bibliography and correct the option scores=NULL in GmedianCov and WeiszfeldCov
+
 Changes to version 1.2.2
 
    - Modify 'Makevars' and 'Makevars.win' files for compatibility with Rcpp (>= 0.12.6). 

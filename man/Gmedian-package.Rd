@@ -24,7 +24,7 @@ Maintainer: \packageMaintainer{Gmedian}
 \references{
 Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. \emph{Bernoulli}, 19, 18-43.
 
-Cardot, H. and Godichon-Baggioni, A. (2015). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis.  \url{http://arxiv.org/abs/1504.02852}
+Cardot, H. and Godichon-Baggioni, A. (2017). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Component7s Analysis. \emph{TEST}, 26, 461-480.
 
 Cardot, H., Cenac, P. and Monnez, J-M. (2012). A fast and recursive algorithm for clustering large datasets with k-medians.  \emph{Computational Statistics and Data Analysis}, 56, 1434-1449.
 

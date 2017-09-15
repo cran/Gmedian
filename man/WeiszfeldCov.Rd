@@ -11,7 +11,7 @@ WeiszfeldCov(X, weights=NULL, scores=2, epsilon=1e-08, nitermax = 100)
 \arguments{
 \item{X}{Data matrix, with n (rows) observations in dimension d (columns).}
 \item{weights}{When \code{NULL}, all observations have the same weight, say 1/n. Else, the user can provide a size n vector of weights (such as sampling weights). These weights are used in the estimating equation (see details).} 
-\item{scores}{An integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=NULL}.}
+\item{scores}{An integer \code{q}, by default \code{q=2}. The function computes the eigenvectors of the median covariation matrix associated to the \code{q} largest eigenvalues and the corresponding principal component scores. No output if \code{scores=0}.}
 \item{epsilon}{Numerical tolerance. By defaut 1e-08.}
 \item{nitermax}{Maxium number of iterations of the algorithm. By default set to 100.}
 }
@@ -30,7 +30,7 @@ Weights can be given for statistical units, allowing to deal with data drawn fro
 }
 
 \references{
-Cardot, H. and Godichon-Baggioni, A. (2015). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis.  \url{http://arxiv.org/abs/1504.02852}
+Cardot, H. and Godichon-Baggioni, A. (2017). Fast Estimation of the Median Covariation Matrix with Application to Online Robust Principal Components Analysis.  TEST, 26, 461-480.
 
 Lardin-Puech, P., Cardot, H.  and Goga, C. (2014). Analysing large datasets of functional data: a survey sampling point of view,   Journal de la Soc. Fr. de Statis., 155(4), 70-94. 
 }
