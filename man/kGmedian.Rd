@@ -5,7 +5,8 @@
 The procedure is similar to the \code{\link[stats]{kmeans}} clustering technique performed recursively with the \code{MacQueen} algorithm. The advantage of the kGmedian algorithm compared to MacQueen strategy is that it deals with sum of norms instead of sum of squared norms, ensuring a more robust behaviour against outlying values. 
 }
 \usage{
-kGmedian(X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans = 10)
+kGmedian(X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans = 10, 
+iter.max = 20)
 }
 \arguments{
 \item{X}{matrix, with n observations (rows) in dimension d (columns).}
@@ -14,6 +15,7 @@ kGmedian(X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans = 10)
 \item{alpha}{Rate of decrease of the descent steps.}
 \item{nstart}{Number of times the algorithm is ran, with  random sets of initialization centers chosen among the observations.}
 \item{nstartkmeans}{Number of initialization points in the \code{\link[stats]{kmeans}} function for choosing the starting point of \code{kGmedian}.}
+\item{iter.max}{Maximum number of iterations considered in the \code{\link[stats]{kmeans}} function for choosing the starting point of \code{kGmedian}.}
 }
 \details{
 See Cardot, Cenac and Monnez (2012).

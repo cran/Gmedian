@@ -1,3 +1,7 @@
+Change to version 1.2.4
+
+   - Allow to control the maximum number of iterations for the "kmeans" function used in the initialization of function Gmedian::kGmedian	
+
 Changes to version 1.2.3
 
    - Update bibliography and correct the option scores=NULL in GmedianCov and WeiszfeldCov

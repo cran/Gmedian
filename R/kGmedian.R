@@ -1,4 +1,4 @@
-kGmedian <- function (X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans=10) 
+kGmedian <- function (X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkmeans=10, iter.max=20) 
 {
   ### 
   X <- as.matrix(X)
@@ -8,7 +8,7 @@ kGmedian <- function (X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkme
   ### Initialization  
   if (is.matrix(ncenters)==FALSE) {
     k <- ncenters
-    centers = kmeans(X, ncenters,nstart=nstartkmeans,algorithm="MacQueen")$centers
+    centers = kmeans(X, ncenters,nstart=nstartkmeans,iter.max=iter.max,algorithm="MacQueen")$centers
     
   } 
   else {
