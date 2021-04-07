@@ -15,7 +15,7 @@ const int p = X.n_cols ;
 arma::rowvec meanvec(p);
 arma::rowvec medvec(p);
 arma::rowvec poids(n);
-double diffxn, normxm = 1;
+double diffxn, diffmax = 0, normxm = 1;
 int iter = 0;
 /* Initialisation avec la moyenne */
 meanvec.fill(0.0);
@@ -23,17 +23,24 @@ for (int it=0 ; it < n ; it++)
 {
 meanvec += (X.row(it)-meanvec)/(it+1);  
 }
+medvec = meanvec; /* to deal with constant value */
 /* Boucle Weiszfeld */
 while (iter < nitermax and normxm > epsilon )
 {
   for (int it=0 ; it < n ; it++)
   {
     diffxn = arma::norm(X.row(it)-meanvec);
-    if (diffxn > 0) poids(it) = weights(it)/diffxn;
+    if (diffxn > 0) { 
+      poids(it) = weights(it)/diffxn;
+      diffmax = 2; 
+    }
     else poids(it)=0;
   }  
-  poids = poids/arma::sum(poids); /* normalisation */
-  medvec = poids*X; /* mise a jour de la mediane */
+  if (diffmax > 0) {
+    poids = poids/arma::sum(poids); /* normalisation */
+    medvec = poids*X; /* mise a jour de la mediane */
+  }
+  else medvec = meanvec;
   normxm = arma::norm(medvec-meanvec)/sqrt(double(p));
   meanvec = medvec;
   iter++;

@@ -30,8 +30,8 @@ See also \code{\link{GmedianCov}}, \code{\link{kGmedian}} and \code{\link{Weiszf
 }
 \examples{
 ## Simulated data - Brownian paths
-n <- 1e4
-d <- 500
+n <- 1e2
+d <- 100
 x <- matrix(rnorm(n*d,sd=1/sqrt(d)), n, d)
 x <- t(apply(x,1,cumsum))
 
@@ -44,8 +44,8 @@ system.time(replicate(10, {
 
 ## Accuracy with contaminated data
 n <- 1e03
-d <- 100
-n.contaminated <- 50 ## 5% of contaminated observations
+d <- 10
+n.contaminated <- 0.05*n ## 5% of contaminated observations
 n.experiment <- 100
 err.L2 <- matrix(NA,ncol=3,nrow=n.experiment)
 colnames(err.L2) = c("mean (no contam.)", "mean (contam.)","Gmedian")

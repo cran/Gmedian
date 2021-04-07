@@ -45,7 +45,7 @@ See also  \code{\link{Gmedian}} and \code{\link{WeiszfeldCov}}.
 \examples{
 ## Simulated data - Brownian paths
 n <- 1e3
-d <- 50
+d <- 20
 x <- matrix(rnorm(n*d,sd=1/sqrt(d)), n, d)
 x <- t(apply(x,1,cumsum))
 

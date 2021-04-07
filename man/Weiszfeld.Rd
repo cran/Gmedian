@@ -11,7 +11,7 @@ Weiszfeld(X, weights = NULL, epsilon=1e-08, nitermax = 100)
 \item{X}{Data matrix, with n (rows) observations in dimension d (columns).}
 \item{weights}{When \code{NULL}, all observations have the same weight, say 1/n. Else, the user can provide a size n vector of weights (such as sampling weights). These weights are used in the estimating equation (see details).} 
 \item{epsilon}{Numerical tolerance. By defaut 1e-08.}
-\item{nitermax}{Maxium number of iterations of the algorithm. By default set to 100.}
+\item{nitermax}{Maximum number of iterations of the algorithm. By default set to 100.}
 }
 \details{
 Weizfeld's algorithm (see Vardi and Zhang, 2000) is fast and accurate and can deal with large samples of high dimension data. However it is not as fast as the recursive approach proposed in \code{\link{Gmedian}}, which may be preferred for very large samples in high dimension. 
@@ -52,8 +52,8 @@ points(med.est$median,pch=19)
 
 ## Computation speed
 ## Simulated data - Brownian paths
-n <- 1e4
-d <- 50
+n <- 1e2 ## choose n <- 1e5 for better evaluation
+d <- 20
 x <- matrix(rnorm(n*d,sd=1/sqrt(d)), n, d)
 x <- t(apply(x,1,cumsum))
 

@@ -1,3 +1,7 @@
+Change to version 1.2.5
+
+   - Fix 'Weiszfeld' function to allow to deal with units with constant value. 
+
 Change to version 1.2.4
 
    - Allow to control the maximum number of iterations for the "kmeans" function used in the initialization of function Gmedian::kGmedian	
