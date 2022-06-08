@@ -24,7 +24,7 @@ kGmedian <- function (X, ncenters=2, gamma=1, alpha=0.75, nstart = 10, nstartkme
       #			centers = x[ind.cent,]		
       ind.init = sample(c(1:n),k)
       centers = X[ind.init, ]
-      x0 = X[-ind.init,]
+      x0 = X
       ZZ <-  stoKmed_rcpp(x0, X, centers, gamma=gamma, alpha = alpha)
       if ((z <- sum(ZZ$wss)) < best) {
         Z = ZZ

@@ -1,3 +1,7 @@
+Change to version 1.2.6
+
+   - allow for k=n-1 in function 'kGmedian' (with k => 2)
+
 Change to version 1.2.5
 
    - Fix 'Weiszfeld' function to allow to deal with units with constant value. 

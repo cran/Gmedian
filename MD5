@@ -1,11 +1,11 @@
-74223c245c1bce71d9b0d2d99716895a *DESCRIPTION
+decb256e8a91cf80145c87ea26350f18 *DESCRIPTION
 ab9318e977a884b224dc29f6aa9dfab2 *NAMESPACE
-4dfd1dd177a3c6db5af466da722494df *NEWS
+1cc7402cf41e5a97ed2daa24982b0ae4 *NEWS
 98cdba293802756963a81ab9ffe28545 *R/Gmedian.R
 09fff7fb1eae755b5fe3a9de12913def *R/GmedianCov.R
 236fba6a9d73b63111e820d5ab803718 *R/RcppExports.R
-71eeec384c95e277fddb218f9999b010 *R/kGmedian.R
-7613be1f4fcbe4be8920b36b67f9a36f *build/partial.rdb
+2b1faeed5478bdd1a7a781b507b46d14 *R/kGmedian.R
+646b0fb4455858cbd7e194494eb1f599 *build/partial.rdb
 3a8b5888f9ef3a385fe5fdc25d962f41 *man/Gmedian-package.Rd
 9665f91369d32e7dc44c68687e0fe7cd *man/Gmedian.Rd
 939407be1e3f2de541ffd0a69c20bc38 *man/GmedianCov.Rd
